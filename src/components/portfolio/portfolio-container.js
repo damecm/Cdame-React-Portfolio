@@ -1,45 +1,63 @@
 import React, { Component } from "react";
+import axios from 'axios';
 
 import PortfolioItem from "./portfolio-item";
 
 export default class PortfolioContainer extends Component {
   constructor() {
     super();
+
     this.state = {
       pageTitle: "Welcome to my Portfolio",
       isLoading: false,
-      data: [
-        { title: "Quip", category: "eCommerce", slug: "quip" },
-        { title: "Eventbrite", category: "Scheduling", slug: "eventbrite" },
-        { title: "Ministry Safe", category: "Enterprise", slug: "ministrysafe" },
-        { title: "SwingAway", category: "eCommerce", slug: "swingaway" }
-      ]
+      data: []
     };
 
-    this.handlePageTitleUpdate = this.handlePageTitleUpdate.bind(this)
+    this.handleFilter = this.handleFilter.bind(this);
   }
 
   handleFilter(filter) {
-    this.setState({
-      data: this.state.data.filter(item => {
-        return item.category === filter;
-      })
-    });
+    if (filter === "CLEAR_FILTERS") {
+      this.getPortfolioItems();
+    }
+    else {
+      this.getPortfolioItems(filter);
+    }
+      
   }
 
+  getPortfolioItems(filter = null) {
+    axios
+      .get("https://dameframe.devcamp.space/portfolio/portfolio_items")
+      .then(response => {
+        if (filter) {this.setState({data: response.data.portfolio_items.filter(item => {
+              return item.category === filter;})
+          });
+        }
+        else {
+          this.setState({data: response.data.portfolio_items});
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  
   portfolioItems() {
     return this.state.data.map(item => {
-      return <PortfolioItem title={item.title} url={"google.com"} slug={item.slug}/>;
+      return (
+        <PortfolioItem
+          key={item.id}
+          item={item}
+        />
+      );
     });
   }
 
-  handlePageTitleUpdate() {
-    this.setState({
-      pageTitle: "Something Else"
-    });
+  componentDidMount() {
+    this.getPortfolioItems();
   }
-
-
 
   render() {
     if (this.state.isLoading) {
@@ -48,23 +66,18 @@ export default class PortfolioContainer extends Component {
 
 
     return (
-
-      <div>
-        <h2>{this.state.pageTitle}</h2>
-
-        <button onClick={() => this.handleFilter("eCommerce")}>
-          eCommerce
-        </button>
-        <button onClick={() => this.handleFilter("Scheduling")}>
-          Scheduling
-        </button>
-        <button onClick={() => this.handleFilter("Enterprise")}>
-          Enterprise
-        </button>
-
-        {this.portfolioItems()}
-
+      <div className="homepage-wrapper">
+        <div className="filter-links">
+          <button className="btn" onClick={() => this.handleFilter("Design")}>Design</button>
+          <button className="btn" onClick={() => this.handleFilter("Fitness")}>Fitness</button>
+          <button className="btn" onClick={() => this.handleFilter("Web Development")}>Web Development</button>
+          
+          <button className="btn" onClick={() => this.handleFilter("Education")}>Education</button>
+          <button className="btn" onClick={() => this.handleFilter("CLEAR_FILTERS")}>All</button>
+        </div>
+        <div className="portfolio-items-wrapper">{this.portfolioItems()}</div>
       </div>
+      
     );
   }
 }

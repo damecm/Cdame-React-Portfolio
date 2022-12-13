@@ -1,28 +1,15 @@
-html {
-    font-size: 62.5%; // 1rem is 10px
-}
-
-*,
-*::after,
-*::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-    font-family: 'montserrat';
-}
+//font-family: 'Titillium Web', sans-serif;
+//font-family: 'Sarabun', sans-serif;
+//rgb(62, 237, 228)
+//darkslateblue
 
 body {
-    overflow-x: hidden;
-    font-weight: normal;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    -webkit-tap-highlight-color: transparent;
+    margin: 0px;
+    font-family: 'Titillium Web', sans-serif;
 }
 
-.app {
-    margin-top: 2rem;
+.container {
     display: grid;
-    justify-items: center;
+    grid-template-columns: 1fr;
+    font-family: 'Sarabun', sans-serif;
 }

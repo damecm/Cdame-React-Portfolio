@@ -1,0 +1,11 @@
+.port-mngr-wrapper {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    .left-column {
+        background-color: rgb(62, 237, 228);
+    }
+    
+    .right-column {
+        background-color: darkslateblue;
+    }
+}

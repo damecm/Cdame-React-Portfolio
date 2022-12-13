@@ -1,0 +1,30 @@
+.auth-page-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: calc(100vh - 84px);
+    background-color: rgb(62, 237, 228);
+
+    .left-column {
+        background-size: cover;
+        background-position: center;
+
+    }
+
+    .right-coloumn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: aqua;
+
+        .auth-form-wrapper {
+            @include input-element();
+            @include base-grid();
+            gap: 21px;
+            padding: 42px;
+        } 
+    }
+
+    img {
+        height: 100%;
+    }
+}
