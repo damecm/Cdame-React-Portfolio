@@ -4,7 +4,7 @@
     font-size: 1em;
     font-weight: 500;
     border: 1px solid transparent;
-    transition: all 0.5 ease-in-out;
+    transition: 0.5s ease-in-out;
     background-color: darkslateblue;
     color: $offwhite;
     
@@ -29,7 +29,7 @@
         border-width: 0px;
         border-bottom: 1.75px solid black;
         background-color: transparent;
-        transition: 0.5s all ease-in-out;
+        transition: 0.5s ease-in-out;
         font-size: 1.1em;
         margin-bottom: 21px;
 
