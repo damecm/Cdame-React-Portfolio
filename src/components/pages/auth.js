@@ -9,7 +9,7 @@ export default class Auth extends Component {
     this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this);
     this.handleUnSuccessfulAuth = this.handleUnSuccessfulAuth.bind(this);
   }
-  "C:\Users\damec\OneDrive\Pictures\dameframebomb.png"
+  
   handleSuccessfulAuth() {
     this.props.handleSuccessfulLogin();
     this.props.history.push("/");

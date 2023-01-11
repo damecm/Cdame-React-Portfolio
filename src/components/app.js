@@ -98,8 +98,8 @@ export default class App extends Component {
           <div>
             
             <NavigationContainer 
-            loggedInStatus={this.state.loggedInStatus} 
-            handleSuccessfulLogOut={this.handleSuccessfulLogOut}
+              loggedInStatus={this.state.loggedInStatus} 
+              handleSuccessfulLogOut={this.handleSuccessfulLogOut}
             />
             
             <Switch>
@@ -117,9 +117,9 @@ export default class App extends Component {
               <Route path="/about-me" component={About}/>
               <Route path="/contact" component={Contact}/>
               <Route path="/blog"
-              render ={props => (
-                <Blog {...props} loggedInStatus={this.state.loggedInStatus} />
-              )}
+                render ={props => (
+                  <Blog {...props} loggedInStatus={this.state.loggedInStatus} />
+                )}
               
               />
               <Route path="/b/:slug" render={props => (

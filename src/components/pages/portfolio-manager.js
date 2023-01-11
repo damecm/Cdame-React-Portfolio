@@ -1,7 +1,7 @@
-import axios from 'axios'
-import React, { Component } from 'react'
-import PortSbList from "../portfolio/port-sb-list"
-import PortForm from "../portfolio/port-form"
+import axios from 'axios';
+import React, { Component } from 'react';
+import PortSbList from "../portfolio/port-sb-list";
+import PortForm from "../portfolio/port-form";
 
 export default class PortfolioManager extends Component {
     constructor () {
