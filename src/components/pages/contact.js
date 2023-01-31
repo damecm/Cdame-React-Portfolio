@@ -12,7 +12,7 @@ export default function() {
             <div className='icon'>
               <FontAwesomeIcon icon="phone" />
             </div>
-            <div className='text'>555-555-5555</div>
+            <div className='text'>616-706-7315</div>
           </div>
           <div className='bullet-point-group'>
             <div className='icon'>
