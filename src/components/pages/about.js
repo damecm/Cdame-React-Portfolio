@@ -9,7 +9,8 @@ export default function() {
       
       <div className='right-column'>
         <div className='about'>
-          As a certified full-stack developer with a versatile set of skills in geographic information systems, fitness, survey, land development and the military; I’m looking to obtain a position that increases my expertise in managing, visualizing, and analyzing data IOT design web applications to help solve problems in everyday life.      
+          As a certified full-stack developer with a versatile set of skills in geographic information systems, fitness, survey, land development and the military; I’m looking to obtain a position that increases my expertise in managing, visualizing, and analyzing data IOT design web applications to help solve problems in everyday life. 
+                
         </div>
 
       </div>
