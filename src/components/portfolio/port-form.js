@@ -211,10 +211,10 @@ export default class PortForm extends Component {
             
             <select name="category" value={this.state.category} onChange={this.handleChange} className="select-element">
               <option value="Design">Design</option>
-              <option value="Fitness">Fitness</option>
-              <option value="Web Development">Web Development</option>
-              <option value="Experience">Experience</option>
-              <option value="Education">Education</option>
+              <option value="HTML/CSS">Fitness</option>
+              <option value="React.js">Web Development</option>
+              <option value="Python">Experience</option>
+              <option value="Javascript">Education</option>
             </select>
 
           </div>
