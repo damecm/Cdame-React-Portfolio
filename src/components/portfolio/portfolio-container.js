@@ -30,7 +30,9 @@ export default class PortfolioContainer extends Component {
     axios
       .get("https://dameframe.devcamp.space/portfolio/portfolio_items")
       .then(response => {
-        if (filter) {this.setState({data: response.data.portfolio_items.filter(item => {
+        if (filter) {
+          this.setState({
+            data: response.data.portfolio_items.filter(item => {
               return item.category === filter;})
           });
         }
