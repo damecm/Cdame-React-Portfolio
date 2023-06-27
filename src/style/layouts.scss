@@ -3,6 +3,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: calc(100vh - 84px);
+    font-size: 24px;
 
     .right-column {
         display: flex;
@@ -26,7 +27,7 @@
                 }
 
                 .text {
-                    font-size: 1.5em;
+                    font-size: 3em;
                     font-weight: 900;
                     margin-left: 21px;
 
